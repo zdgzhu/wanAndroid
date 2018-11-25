@@ -1,0 +1,44 @@
+ext {
+    android = [
+            compileSdkVersion: 26,
+            buildToolsVersion: "26.0.2",
+            applicationId    : "com.zhu.weiyue",
+            minSdkVersion    : 19,
+            targetSdkVersion : 26,
+            versionCode      : 1,
+            versionName      : "1.0"
+
+    ]
+
+
+    dependVersion = [
+            support: "28.0.0",
+            dbflow : "4.2.4"
+
+    ]
+
+    dependencies = [
+            //android-support
+            "support-v4"          : "com.android.support-v4:${dependVersion.support}",
+            "appcompat-v7"        : "com.android.support:appcompat-v7:${dependVersion.support}",
+            "design"              : "com.android.support:design:${dependVersion.support}",
+
+            // UI
+            "butterknife"         : "com.jakewharton:butterknife:9.0.0-rc1",
+            "butterknife-compiler": "com.jakewharton:butterknife-compiler:9.0.0-rc1",
+
+            "dagger"              : "com.google.dagger:dagger:2.19",
+            "dagger-compiler"     : "com.google.dagger:dagger-compiler:2.19",
+
+            //alibaba
+            "arouter-api"         : "com.alibaba:arouter-api:1.4.1",
+            "arouter-compiler"    : "com.alibaba:arouter-compiler:1.2.2",
+
+            //数据库
+            "litepal"             : "org.litepal.android:java:3.0.0",
+
+
+    ]
+
+
+}
