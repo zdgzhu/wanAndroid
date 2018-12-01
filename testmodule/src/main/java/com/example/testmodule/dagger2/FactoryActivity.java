@@ -2,6 +2,7 @@ package com.example.testmodule.dagger2;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -16,9 +17,11 @@ import butterknife.OnClick;
 
 @Route(path = "/actTest/FactoryActivity")
 public class FactoryActivity extends AppCompatActivity {
-
+    private String TAG = "TAG_" + getClass().getSimpleName();
     @Inject
     Product product;
+    @Inject
+    Factory factory;
     @BindView(R.id.btn_dagger_01)
     Button btn01;
 
@@ -37,10 +40,16 @@ public class FactoryActivity extends AppCompatActivity {
     @OnClick(R.id.btn_dagger_01)
     public void onClick() {
         DaggerFactoryActivityComponent.builder()
-           .mainModule(new MainModule("tag"))
+//           .mainModule(new MainModule("tag"))
                 .build().inject(this);
-        String str = this.product.createProduct();
-        Toast.makeText(this, "act "+str, Toast.LENGTH_SHORT).show();
+//        String str = this.product.createProduct();
+//        Toast.makeText(this, "act "+str, Toast.LENGTH_SHORT).show();
+//        Log.d(TAG, "onClick: str = "+str);
+        String str1 = factory.getData();
+        Log.d(TAG, "onClick: str1 = "+str1);
+
+
+
     }
 
 

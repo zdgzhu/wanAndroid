@@ -50,13 +50,6 @@ dependencies {
     annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
 
 
-//    implementation('com.alibaba:arouter-api:1.4.1'){
-//        exclude group: 'com.android.support'
-//    }
-//    implementation('com.alibaba:arouter-api:1.4.1'){
-//        exclude group: 'com.android.support'
-//    }
-
 
     configurations.all {
         resolutionStrategy.eachDependency { DependencyResolveDetails details ->
