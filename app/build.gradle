@@ -52,6 +52,9 @@ dependencies {
     annotationProcessor rootProject.ext.dependencies["dagger-compiler"]
 
     implementation rootProject.ext.dependencies["fragmentation"]
+    implementation rootProject.ext.dependencies["rxlifecycle3"]
+    implementation rootProject.ext.dependencies["rxlifecycle-components"]
+    implementation rootProject.ext.dependencies["timber"]
 
     implementation rootProject.ext.dependencies["arouter-api"]
     annotationProcessor rootProject.ext.dependencies["arouter-compiler"]

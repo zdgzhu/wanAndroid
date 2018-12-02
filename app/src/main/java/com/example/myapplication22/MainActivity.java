@@ -10,10 +10,12 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.blankj.utilcode.util.ActivityUtils;
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.Utils;
+import com.example.myapplication22.di.module.ApplicationModule;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import me.yokeyword.fragmentation.ISupportFragment;
+import timber.log.Timber;
 
 @Route(path = "/wanandroid/MainActivity")
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -24,22 +26,31 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     private long mExitTime;
     private int preIndex;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        Timber.d("ddddd");
+
+
+
+
     }
+
+
+
+
+
+
+
 
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         return false;
     }
-
-
 
 
 }
