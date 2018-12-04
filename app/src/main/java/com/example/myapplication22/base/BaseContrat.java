@@ -27,10 +27,10 @@ public interface BaseContrat {
         void hideLoading();
 
         //显示请求成功
-        void showSuccess(String message);
+        void showSuccess(String successMsg);
 
         //失败重试
-        void showFaild(String message);
+        void showFaild(String errorMsg);
 
         //显示当前网络不可用
         void showNoNet();
