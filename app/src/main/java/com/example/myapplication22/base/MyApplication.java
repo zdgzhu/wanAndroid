@@ -10,6 +10,7 @@ import com.example.myapplication22.BuildConfig;
 import com.example.myapplication22.di.component.ApplicationComponent;
 import com.example.myapplication22.di.component.DaggerApplicationComponent;
 import com.example.myapplication22.di.module.ApplicationModule;
+import com.tencent.bugly.crashreport.CrashReport;
 
 import java.util.Timer;
 
@@ -45,6 +46,7 @@ public class MyApplication extends Application {
                 })
                 .install();
         initTimber();
+        CrashReport.initCrashReport(getApplicationContext(), "544dbeaab5", true);
 
     }
 

@@ -1,4 +1,18 @@
 apply plugin: 'com.android.application'
+apply plugin: 'bugly'
+
+bugly {
+    appId = '544dbeaab5' // 注册时分配的App ID
+    appKey = '627b6c44-0aa8-4b85-902d-7e3e60a35157' // 注册时分配的App Key
+    debug = true
+    upload=true
+    uploadMapping=true
+    uploadSymbol=true
+    execute=true
+
+}
+
+
 
 android {
     compileSdkVersion 28
@@ -16,7 +30,10 @@ android {
             }
         }
 
-
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi' , 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
 
     }
     buildTypes {
@@ -25,6 +42,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+
 
 
 }
@@ -55,6 +74,8 @@ dependencies {
     implementation rootProject.ext.dependencies["rxlifecycle3"]
     implementation rootProject.ext.dependencies["rxlifecycle-components"]
     implementation rootProject.ext.dependencies["timber"]
+    implementation rootProject.ext.dependencies["bugly-sdk"]
+    implementation rootProject.ext.dependencies["bugly-ndk"]
 
     implementation rootProject.ext.dependencies["arouter-api"]
     annotationProcessor rootProject.ext.dependencies["arouter-compiler"]

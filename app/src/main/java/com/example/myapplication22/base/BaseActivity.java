@@ -1,15 +1,17 @@
 package com.example.myapplication22.base;
 
 
+import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.MotionEvent;
-import android.widget.Toolbar;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.blankj.utilcode.util.CloseUtils;
@@ -76,6 +78,7 @@ public abstract class BaseActivity<T extends BaseContrat.BasePresenter>
         attachView();
         initView();
         if (!NetworkUtils.isConnected())showNoNet();
+        Log.e("TAG_BaseActivity", "onCreate: baseActivity" );
 
     }
 
@@ -417,8 +420,22 @@ public abstract class BaseActivity<T extends BaseContrat.BasePresenter>
     /**
      * 初始化 toobar
      */
+
     private void initToolbar() {
-//        mToolBar=(Toolbar)findViewById(R.id.toolbar)
+        mToolBar = (Toolbar) findViewById(R.id.toolbar);
+        if (mToolBar == null) {
+            throw new NullPointerException("toolbar can not be null");
+        }
+        setSupportActionBar(mToolBar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(showHomeApp());
+        /**
+         * toolbar 除掉阴影
+         */
+        getSupportActionBar().setElevation(0);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            mToolBar.setElevation(0);
+
+        }
 
     }
 

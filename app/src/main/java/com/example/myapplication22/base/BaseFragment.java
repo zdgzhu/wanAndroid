@@ -65,6 +65,7 @@ public abstract class BaseFragment<T extends BaseContrat.BasePresenter> extends 
         mDelegate.onCreate(savedInstanceState);
         initFragmentComponent();
         ARouter.getInstance().inject(this);
+        initInjector();
         attachView();
         if (!NetworkUtils.isConnected())showNoNet();
 
