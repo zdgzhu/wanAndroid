@@ -42,6 +42,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
         return R.layout.activity_main;
     }
 
+
     @Override
     protected void initInjector() {
 

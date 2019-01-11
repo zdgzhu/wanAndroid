@@ -30,7 +30,7 @@ public class MyApplication extends Application {
         initApplicationComponent();
         Utils.init(this);
         initARouter();
-//
+
         Fragmentation.builder()
                 // 设置 栈视图 模式为 悬浮球模式   SHAKE: 摇一摇唤出   NONE：隐藏
                 .stackViewMode(Fragmentation.BUBBLE)

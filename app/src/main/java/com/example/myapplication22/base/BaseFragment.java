@@ -54,7 +54,7 @@ public abstract class BaseFragment<T extends BaseContrat.BasePresenter> extends 
 
     protected abstract int getLayoutId();
 
-    protected abstract int initInjector();
+    protected abstract void initInjector();
 
     protected abstract int initView(View view);
 
@@ -79,11 +79,6 @@ public abstract class BaseFragment<T extends BaseContrat.BasePresenter> extends 
             }
             ft.commit();
         }
-
-
-
-
-
     }
 
 

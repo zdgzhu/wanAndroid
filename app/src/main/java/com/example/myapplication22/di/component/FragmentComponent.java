@@ -7,6 +7,7 @@ import android.content.Context;
 import com.example.myapplication22.di.module.FragmentModule;
 import com.example.myapplication22.di.scope.ContextLife;
 import com.example.myapplication22.di.scope.PerFragment;
+import com.example.myapplication22.ui.home.HomeFragment;
 
 import dagger.Component;
 
@@ -23,6 +24,9 @@ public interface FragmentComponent {
 
 
     Activity getActivity();
+
+
+    void inject(HomeFragment fragment);
 
 
 

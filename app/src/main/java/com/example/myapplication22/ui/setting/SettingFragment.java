@@ -14,8 +14,8 @@ public class SettingFragment extends BaseFragment {
     }
 
     @Override
-    protected int initInjector() {
-        return 0;
+    protected void initInjector() {
+
     }
 
     @Override
